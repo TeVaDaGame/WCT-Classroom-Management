@@ -12,25 +12,28 @@
     <?php include 'includes/header.php'; ?>
 
     <div class="container mx-auto p-4">
-        <h2 class="text-2xl font-bold mb-4">Student Management</h2>
+        <h2 class="text-2xl font-bold mb-4 text-purple-700">Student Management</h2>
 
-        <form action="actions/add_student.php" method="POST" class="mb-4">
-            <div class="mb-2">
-                <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                <input type="text" name="name" id="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500">
-            </div>
-            <div class="mb-2">
-                <label for="age" class="block text-sm font-medium text-gray-700">Age</label>
-                <input type="number" name="age" id="age" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500">
-            </div>
-            <div class="mb-2">
-                <label for="grade" class="block text-sm font-medium text-gray-700">Grade</label>
-                <input type="text" name="grade" id="grade" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500">
-            </div>
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Add Student</button>
-        </form>
+        <div class="bg-white shadow rounded-lg p-6 mb-6">
+            <h3 class="text-xl font-semibold mb-4 text-purple-700">Add New Student</h3>
+            <form action="actions/add_student.php" method="POST" class="space-y-4">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                    <input type="text" name="name" id="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-purple-500">
+                </div>
+                <div>
+                    <label for="age" class="block text-sm font-medium text-gray-700">Age</label>
+                    <input type="number" name="age" id="age" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-purple-500">
+                </div>
+                <div>
+                    <label for="grade" class="block text-sm font-medium text-gray-700">Grade</label>
+                    <input type="text" name="grade" id="grade" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-purple-500">
+                </div>
+                <button type="submit" class="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600">Add Student</button>
+            </form>
+        </div>
 
-        <h3 class="text-xl font-semibold mb-2">Student List</h3>
+        <h3 class="text-xl font-semibold mb-2 text-purple-700">Student List</h3>
         <div id="student-list" class="bg-white shadow rounded-lg p-4">
             <!-- Student list will be populated here via JavaScript -->
         </div>
@@ -51,7 +54,7 @@
                                 <strong>${student.name}</strong> (Age: ${student.age}, Grade: ${student.grade})
                             </div>
                             <div>
-                                <button onclick="editStudent('${student.id}')" class="text-blue-500 hover:underline">Edit</button>
+                                <button onclick="editStudent('${student.id}')" class="text-purple-500 hover:underline">Edit</button>
                                 <button onclick="deleteStudent('${student.id}')" class="text-red-500 hover:underline ml-4">Delete</button>
                             </div>
                         `;
